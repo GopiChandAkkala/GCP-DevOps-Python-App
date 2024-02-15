@@ -3,4 +3,5 @@ steps:
     args: ['build', '-t', 'asia-south1-docker.pkg.dev/braided-city-406614/gcp-devops/gcp-python', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', asia-south1-docker.pkg.dev/braided-city-406614/gcp-devops/gcp-python]
+# dummy commit
  
