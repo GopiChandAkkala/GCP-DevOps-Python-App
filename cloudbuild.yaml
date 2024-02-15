@@ -3,4 +3,10 @@ steps:
     args: ['build', '-t', 'us-central1-docker.pkg.dev/braided-city-406614/gcp-devops/gcp-python', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/braided-city-406614/gcp-devops/gcp-python']
-
+    # deploy container image to GKE
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+    - run
+    - --filename=gke-deployment.yaml
+    - --location=us-central1-c
+    - --cluster=gcp-devops-cluster
